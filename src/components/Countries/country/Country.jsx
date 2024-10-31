@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./style.css"
+import CountryDetail from "../../../CountryDetail/CountryDetail";
 
 const Country = ({info,BtnDynamic}) => {
  
@@ -17,8 +18,8 @@ const Country = ({info,BtnDynamic}) => {
            <p>area : {area}</p> 
            <button onClick={clicked}>{visited ? "visited" : "going" }</button>
            <br />{visited ? "i visited this country" : "i will visit"}
-
-           <button onClick={()=>BtnDynamic(info.name.common)}>click</button> {/* " '() =>' this phrase  makes the btn not call like infinity time and thus it help to pass data"   */}
+           <button onClick={()=>BtnDynamic(info)}>click</button> {/* " '() =>' this phrase  makes the btn not call like infinity time and thus it help to pass data"   */}
+           <CountryDetail info={info} BtnDynamic={BtnDynamic}></CountryDetail>
         </div>
     );
 };

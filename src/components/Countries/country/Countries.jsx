@@ -24,11 +24,12 @@ const Countries = () => {
         <h4>Visited : {visitedCount.length}</h4>
         <ul>
             {
-                visitedCount.map(apple => <li key={country.cc3}>{apple}</li>)
+                visitedCount.map((apple,idx) => <li key={idx}><img src={apple.flags.png}></img>{apple.name.common}<hr></hr></li>)
+                //that idx  is for not getting "key" errror . which we solve in the below by applying "key={country.cc3}"
                 
             }
         </ul>
-        <div className="country-container">
+        <div  className='country-container'>
             {
                  country.map(info=><Country key={country.cc3} BtnDynamic={BtnDynamic}  info={info}></Country>)  
                  //sending prop for btn to get the information from that file . its like when that button on that exact file will click it will send the needed data
